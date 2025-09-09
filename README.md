@@ -20,11 +20,21 @@ This directory contains the downloaded static content from the MAINGAU Energie l
 
 Open `index.html` in a web browser to view the login page locally.
 
+### Environment-Specific URLs
+
+The password reset link in `index.html` needs to be updated based on the deployment environment:
+
+- **Production**: `https://app.maingau-energie.de/passwort-vergessen`
+- **Staging/Test**: `https://app-staging.maingau-energie.de/passwort-vergessen`
+
+Update line 93 in `index.html` with the appropriate URL before deployment.
+
 ### For Django Projects
 1. Copy `index.html` to your Django templates directory
-2. Run `python manage.py makemessages -l de` to extract translations
-3. Edit `locale/de/LC_MESSAGES/django.po` with German translations
-4. Run `python manage.py compilemessages` to compile
+2. Update the password reset URL (line 93) for your target environment
+3. Run `python manage.py makemessages -l de` to extract translations
+4. Edit `locale/de/LC_MESSAGES/django.po` with German translations
+5. Run `python manage.py compilemessages` to compile
 
 ## Translation Example
 
