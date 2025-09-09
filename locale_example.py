@@ -30,12 +30,12 @@ msgid "Forgot your password?"
 msgstr "Passwort vergessen?"
 
 #: templates/login.html:160
-msgid "New to MAINGAU Energie?"
-msgstr "Neu bei MAINGAU Energie?"
+msgid "New to MAINGAU?"
+msgstr "Neu bei MAINGAU?"
 
 #: templates/login.html:162
-msgid "Sign up here!"
-msgstr "Hier registrieren!"
+msgid "Sign up for a tariff"
+msgstr "Tarif abschließen"
 """
 
 # Example English translation file (locale/en/LC_MESSAGES/django.po):
@@ -65,12 +65,12 @@ msgid "Forgot your password?"
 msgstr "Forgot your password?"
 
 #: templates/login.html:160
-msgid "New to MAINGAU Energie?"
-msgstr "New to MAINGAU Energie?"
+msgid "New to MAINGAU?"
+msgstr "New to MAINGAU?"
 
 #: templates/login.html:162
-msgid "Sign up here!"
-msgstr "Sign up here!"
+msgid "Sign up for a tariff"
+msgstr "Sign up for a tariff"
 """
 
 # Django Translation Best Practices Summary:
