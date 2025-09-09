@@ -1,42 +1,34 @@
 <!-- This is mostly a copy of django-two-factor/core/login.html with added password rest links and client strings
-      The library demands we use a few exact filenames and paths to work, plus i18n for its translations. -->
+     The library demands we use a few exact filenames and paths to work, plus i18n for its translations. -->
 <!-- This is the base template for the multi-factor login, mostly a copy of base.html to work with
      django-two-factor-auth's form, which requires this specific filename -->
-
-
-
-
+{% load i18n %}
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <!--[if gte IE 9]>
     <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
     <!--[if IE 8]>
     <meta http-equiv="X-UA-Compatible" content="IE=8"><![endif]-->
-    <title>Login — MAINGAU Energie</title>
+    <title>MAINGAU Energie - Login</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta name="robots" content="noindex, nofollow">
 
     <!-- Favicons -->
-    
-        <link rel="shortcut icon" href="">
+    <link rel="shortcut icon" href="">
 
-        <!-- ORIGINAL -->
-        <!-- <link rel="shortcut icon" href="/static/clients/maingau/favicon.ico"> -->
-        <!-- <link rel="shortcut icon" href="/static/brands/maingau/favicon.ico"> -->
+    <!-- ORIGINAL -->
+    <!-- <link rel="shortcut icon" href="/static/clients/maingau/favicon.ico"> -->
+    <!-- <link rel="shortcut icon" href="/static/brands/maingau/favicon.ico"> -->
 
-        <!-- FOR LOCAL TESTING -->
-        <link rel="shortcut icon" href="static/clients/maingau/favicon.ico">
-        <link rel="shortcut icon" href="static/brands/maingau/favicon.ico">
-    
-
-    
-
-    
+    <!-- FOR LOCAL TESTING -->
+    <link rel="shortcut icon" href="static/clients/maingau/favicon.ico">
+    <link rel="shortcut icon" href="static/brands/maingau/favicon.ico">
 
     <!-- ORIGINAL CSS -->
     <!-- <link rel="stylesheet" href="/static/common/layout.css" type="text/css"> -->
@@ -51,130 +43,87 @@
 </head>
 
 <body class="">
-<div class="card-wrap">
-    <div class="card card-design">
-        
+    <div class="card-wrap">
+        <div class="card card-design">
 
-<div class="logo">
-    <!-- ORIGINAL LOGOS -->
-    <!-- <object type="image/svg+xml" data="/static/brands/maingau/logo.svg"> -->
-        <!-- <object type="image/svg+xml" data="/static/clients/maingau/logo.svg"> -->
+            <div class="logo">
+                <!-- ORIGINAL LOGOS -->
+                <!-- <object type="image/svg+xml" data="/static/brands/maingau/logo.svg"> -->
+                <!-- <object type="image/svg+xml" data="/static/clients/maingau/logo.svg"> -->
 
-    <!-- FOR LOCAL TESTING -->
-    <object type="image/svg+xml" data="static/brands/maingau/logo.svg">
-        <object type="image/svg+xml" data="static/clients/maingau/logo.svg">
-            
-            
-                <h1>MAINGAU Energie</h1>
-            
-        </object>
-    </object>
-</div>
-
-        
-    <h3 class="auth-header" id="sign-in-header">
-        Login</h3>
-
-    
-
-    <form action="" method="post" class="form-wrap" id="login-form">
-        
-            <input type="hidden" name="csrfmiddlewaretoken" value="mJcrtjlwmvAN2GvCkBtOHWTWP2itxGiwRgTc40mp7Bj8HAzdQ7FniwWDirPJ4IRN">
-            
-
-
-
-
-            <!-- This rewrites django-two-factor-auth's _wizard_forms.html to preserve the original email/password
-    labels, placeholders, etc. while leaving everything else styled but untouched -->
-
-
-
-<div>
-    <input type="hidden" name="login-current_step" value="auth" id="id_login-current_step">
-
-    
-        <!-- Custom rendering for username and password for backwards compatibility, the rest relies on the library -->
-        
-            
-            
-
-            <div class="form-group">
-                <label for="id_auth-username">
-                    <strong>E-mail-Adresse</strong>
-                </label>
-                <input type="email" name="auth-username" autofocus autocapitalize="none" autocomplete="username" maxlength="512" required class="form-control" placeholder="E-mail-Adresse" id="id_auth-username">
+                <!-- FOR LOCAL TESTING -->
+                <object type="image/svg+xml" data="static/brands/maingau/logo.svg">
+                    <object type="image/svg+xml" data="static/clients/maingau/logo.svg">
+                        <h1>MAINGAU Energie</h1>
+                    </object>
+                </object>
             </div>
 
-        
-    
-        <!-- Custom rendering for username and password for backwards compatibility, the rest relies on the library -->
-        
-            
-            
+            <h3 class="auth-header" id="sign-in-header">
+                {% trans "Log in to your account" %}
+            </h3>
 
-            <div class="form-group mt-sm">
-                <label for="id_auth-password">
-                    <strong>Passwort</strong>
-                </label>
-                <input type="password" name="auth-password" autocomplete="current-password" data-toggle="reveal" required class="form-control" placeholder="Passwort" id="id_auth-password">
-                <button class="reveal-button" type="button"
-                        title="Klicke um dein Passwort anzuzeigen">
-                    Klicke um dein Passwort anzuzeigen
-                </button>
-            </div>
+            <form action="" method="post" class="form-wrap" id="login-form">
+                <input type="hidden" name="csrfmiddlewaretoken"
+                    value="mJcrtjlwmvAN2GvCkBtOHWTWP2itxGiwRgTc40mp7Bj8HAzdQ7FniwWDirPJ4IRN">
 
-        
-    
-</div>
+                <!-- This rewrites django-two-factor-auth's _wizard_forms.html to preserve the original email/password
+                     labels, placeholders, etc. while leaving everything else styled but untouched -->
 
+                <div>
+                    <input type="hidden" name="login-current_step" value="auth" id="id_login-current_step">
 
-            
-            <input type="submit" value="" hidden/>
+                    <!-- Custom rendering for username and password for backwards compatibility, the rest relies on the library -->
+                    <div class="form-group">
+                        <label for="id_auth-username">
+                            <strong>{% trans "Email address" %}</strong>
+                        </label>
+                        <input type="email" name="auth-username" autofocus autocapitalize="none" autocomplete="username"
+                            maxlength="512" required class="form-control" placeholder="{% trans 'Email address' %}"
+                            id="id_auth-username">
+                    </div>
 
-            <!-- This is virtually identical to django-two-factor-auth's _wizard_actions.html, but with authserver styling. -->
+                    <!-- Custom rendering for username and password for backwards compatibility, the rest relies on the library -->
+                    <div class="form-group mt-sm">
+                        <label for="id_auth-password">
+                            <strong>{% trans "Password" %}</strong>
+                        </label>
+                        <input type="password" name="auth-password" autocomplete="current-password" data-toggle="reveal"
+                            required class="form-control" placeholder="{% trans 'Password' %}" id="id_auth-password">
+                        <button class="reveal-button" type="button" title="{% trans 'Click to show your password' %}">
+                            {% trans "Click to show your password" %}
+                        </button>
+                    </div>
+                </div>
 
+                <input type="submit" value="" hidden />
 
+                <!-- This is virtually identical to django-two-factor-auth's _wizard_actions.html, but with authserver styling. -->
+                <div class="button-group button-one-line-group">
+                    <!-- Only show "Back" button when there is no previous step -->
+                    <button type="submit" id="submit-button" class="button button-one-line button--primary">
+                        {% trans "Login" %}
+                    </button>
+                </div>
 
-<div class="button-group button-one-line-group">
-  <!-- Only show "Back" button when there is no previous step -->
-  
-
-  <button type="submit" id="submit-button" class="button button-one-line button--primary">
-      
-        Login
-      
-  </button>
-</div>
-
-
-            
-
-            
-                <div class="link-wrapper" id="password-reset">
+                <div class="link-wrapper password-reset-link" id="password-reset">
                     <a href="https://www.maingau-energie.de">
-                        Ich habe mein Passwort vergessen
+                        {% trans "Forgot your password?" %}
                     </a>
                 </div>
-                <div class="link-wrapper pt-md" id="not-a-customer">
+
+                <div class="link-wrapper signup-section pt-md" id="not-a-customer">
                     <p>
-                        Kein Kunde von ⁨MAINGAU Energie⁩?
+                        {% trans "New to MAINGAU Energie?" %}
                         <a href="https://www.maingau-energie.de">
-                            Registriere dich hier!
+                            {% trans "Sign up for a tariff" %}
                         </a>
                     </p>
                 </div>
-            
-        
-    </form>
+            </form>
 
-    
-        
-    
-
+        </div>
     </div>
-</div>
-
 
     <!-- ORIGINAL SCRIPTS -->
     <!-- <script type="text/javascript" src="/static/clients/maingau/ui.js"></script> -->
@@ -185,10 +134,6 @@
     <script type="text/javascript" src="static/clients/maingau/ui.js"></script>
     <script type="text/javascript" src="static/brands/maingau/ui.js"></script>
 
-
-
-
-
-
 </body>
+
 </html>

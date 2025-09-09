@@ -1,3 +1,41 @@
+/* MAINGAU Login Theme CSS - Replaces theme.css */
+/* Based on Figma design specifications */
+
+/* CSS Custom Properties for MAINGAU Design System */
+:root {
+    /* Colors */
+    --maingau-yellow: #FFE500;
+    --maingau-blue-dark: #002D67;
+    --maingau-blue: #004BAD;
+    --fg-primary: #002657;
+    --fg-tertiary: #6b84a5;
+    --fg-inverse-primary: #f9fcff;
+    --fg-active-primary: #0069f1;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f1f6ff;
+    --bg-active-primary: #0069f1;
+    --bg-active-tertiary: #f1f6ff;
+    
+    /* Shadows */
+    --shadow-1: rgba(16, 24, 40, 0.08);
+    --shadow-2: rgba(16, 24, 40, 0.03);
+    
+    /* Border radius */
+    --radius-12: 12px;
+    --radius-32: 32px;
+    --radius-48: 48px;
+    
+    /* Spacing */
+    --spacing-8: 8px;
+    --spacing-16: 16px;
+    --spacing-24: 24px;
+    --spacing-32: 32px;
+    
+    /* Typography */
+    --font-family: "RT Rondelle", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Base Styles Override */
 * {
     box-sizing: border-box;
 }
@@ -7,50 +45,57 @@ html {
 }
 
 body {
-    color: #333;
+    color: var(--fg-primary);
     font-size: 1.6rem;
     font-style: normal;
     font-weight: 400;
     line-height: 1.5;
     letter-spacing: 0.15px;
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: var(--font-family);
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    background-color: #F5F7FA;
+    background-color: var(--bg-secondary);
 }
 
+/* Logo Container */
 div.heading object {
     margin-left: auto;
     margin-right: auto;
 }
 
+/* Main Container Wrapper */
 .card-wrap {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 2rem;
+    background-color: var(--bg-secondary);
 }
 
+/* Main Card Design */
 .card-design {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 617px;
+    width: 550px;
     max-width: 100%;
-    padding: 32px;
-    border-radius: 10px;
-    background-color: white;
+    padding: var(--spacing-32);
+    border-radius: var(--radius-32);
+    background-color: var(--bg-primary);
     border: none;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 
+        0px 12px 16px -4px var(--shadow-1),
+        0px 4px 6px -2px var(--shadow-2);
 }
 
+/* Responsive adjustments */
 @media (max-width: 768px) {
     .card-design {
         max-width: 90%;
-        padding: 24px;
+        padding: var(--spacing-24);
     }
 }
 
@@ -58,87 +103,104 @@ div.heading object {
     .card-design {
         max-width: 95%;
         padding: 20px;
+        border-radius: var(--spacing-16);
     }
 }
 
+/* Form Container */
 .form-wrap {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
+/* Typography Styles */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
     margin-top: 0;
     margin-bottom: 0.4rem;
     font-weight: 400;
     line-height: 1.5;
+    font-family: var(--font-family);
 }
 
-h1,
-.h1 {
-    font-weight: 900;
-    color: #004BAD;
+h1, .h1 {
+    font-weight: 800;
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    letter-spacing: -0.0046px;
+    color: var(--fg-primary);
+    text-align: center;
 }
 
-h2,
-.h2 {
+h2, .h2 {
     letter-spacing: 0;
 }
 
 h3 {
     font-size: 2.4rem;
     letter-spacing: 0.25px;
-    color: #1A365D;
+    color: var(--fg-primary);
     font-weight: 600;
 }
 
+/* Header Styles */
 .auth-header {
     text-align: center;
+    margin-bottom: 2.4rem;
 }
 
+/* Form Group Styles */
 .form-group {
     margin-bottom: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
 }
 
 .form-group > label {
     display: inline-block;
     margin-bottom: 0.4rem;
     font-size: 1.4rem;
-    font-weight: 500;
+    font-weight: 400;
     letter-spacing: 0.1px;
-    color: #333;
+    color: var(--fg-primary);
+    font-family: var(--font-family);
+    line-height: 1.6rem;
 }
 
+/* Form Control Styles */
 .form-control {
     display: block;
     width: 100%;
-    height: auto;
-    padding: 1.6rem;
+    height: 48px;
+    padding: 1.0rem 1.2rem;
     font-size: 1.6rem;
     font-weight: 400;
-    color: #333;
-    background-color: #F0F4F8;
-    border: 2px solid #B8D4F0;
-    border-radius: 0.8rem;
-    transition: border-color 0.15s ease-in-out;
+    color: var(--fg-primary);
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--fg-tertiary);
+    border-radius: var(--radius-12);
+    transition: all 0.15s ease-in-out;
+    font-family: var(--font-family);
+    line-height: 2.4rem;
+    letter-spacing: -0.01px;
+}
+
+.form-control::placeholder {
+    color: var(--fg-primary);
+    opacity: 0.7;
 }
 
 .form-control:focus {
     outline: none;
-    border-color: #0069F1;
+    border-color: var(--fg-active-primary);
+    background-color: var(--bg-primary);
     box-shadow: 0 0 0 3px rgba(0, 105, 241, 0.1);
-    background-color: #FFFFFF;
+}
+
+.form-control:hover {
+    border-color: var(--fg-active-primary);
 }
 
 .form-control.error {
@@ -146,49 +208,57 @@ h3 {
     background-color: #FFF5F5;
 }
 
-.button {
+/* Button Styles */
+.button, .btn {
     position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 1.6rem 3.2rem;
+    padding: 0 1.6rem;
     margin: 0;
+    height: 48px;
     font-size: 1.6rem;
-    font-weight: 600;
-    line-height: 1.25;
+    font-weight: 400;
+    line-height: 2.4rem;
+    letter-spacing: -0.01px;
     text-align: center;
     text-decoration: none;
     vertical-align: middle;
     cursor: pointer;
-    background-color: #0069F1;
-    border: 2px solid #0069F1;
-    border-radius: 5rem;
-    color: white;
+    background-color: var(--bg-active-primary);
+    border: none;
+    border-radius: var(--radius-48);
+    color: var(--fg-inverse-primary);
     transition: all 0.15s ease-in-out;
     width: 100%;
+    font-family: var(--font-family);
+    gap: 0.8rem;
 }
 
-.button:hover {
+.button:hover, .btn:hover {
     background-color: #0052CC;
-    border-color: #0052CC;
+    transform: translateY(-1px);
+}
+
+.button:active, .btn:active {
+    transform: translateY(0);
 }
 
 .button--primary {
-    background-color: #0069F1;
-    border-color: #0069F1;
-    color: white;
+    background-color: var(--bg-active-primary);
+    color: var(--fg-inverse-primary);
 }
 
 .button--primary:hover {
     background-color: #0052CC;
-    border-color: #0052CC;
 }
 
-.button:focus .button:hover {
+.button:focus, .button:hover {
     text-decoration: none;
     outline: none;
 }
 
+/* Button Group Styles */
 .button-one-line {
     flex: 1;
     padding: 10px 20px;
@@ -204,6 +274,7 @@ h3 {
     width: 100%;
 }
 
+/* Utility Classes */
 .pt-md {
     padding-top: 1.6rem;
 }
@@ -224,68 +295,43 @@ h3 {
     margin: 0;
 }
 
-.btn {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1.6rem 3.2rem;
-    margin: 0;
-    font-size: 1.6rem;
-    font-weight: 600;
-    line-height: 1.25;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    vertical-align: middle;
-    cursor: pointer;
-    background-color: #0069F1;
-    border: 2px solid #0069F1;
-    border-radius: 5rem;
-    transition: all 0.15s ease-in-out;
-    width: 100%;
-}
-
-.btn:hover {
-    background-color: #0052CC;
-    border-color: #0052CC;
-}
-
-.reveal-button {
-    display: none;
-}
-
+/* Link Styles */
 .link-wrapper {
     text-align: center;
+    margin-top: 1.6rem;
 }
 
-a,
-.link,
-.btn-link {
+a, .link, .btn-link {
     display: inline;
     padding: 0;
     margin: 0;
-    font-weight: 500;
-    line-height: 1.5;
-    color: #0069F1;
+    font-weight: 400;
+    line-height: 2.4rem;
+    color: var(--fg-active-primary);
     text-decoration: underline;
     border: none;
     outline: none;
     background-color: inherit;
     vertical-align: baseline;
+    font-family: var(--font-family);
+    font-size: 1.6rem;
+    letter-spacing: -0.01px;
+    transition: all 0.15s ease-in-out;
 }
 
-a:hover,
-.link:hover,
-.btn-link:hover {
+a:hover, .link:hover, .btn-link:hover {
     text-decoration: none;
+    color: #0052CC;
 }
 
+/* Text Styles */
 p {
     margin-top: 0;
     margin-bottom: 0.8rem;
+    font-family: var(--font-family);
 }
 
+/* Button Group Styles */
 .button-group {
     display: flex;
     align-items: flex-start;
@@ -316,12 +362,13 @@ p {
     margin-left: 0.8rem;
 }
 
+/* Authorization Form Styles */
 .authorize-form-wrap {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 376px;
+    max-width: 486px;
     width: 100%;
 }
 
@@ -343,6 +390,7 @@ p {
     display: flex;
     flex-wrap: nowrap;
     width: 100%;
+    gap: 1.6rem;
 }
 
 .authorize-form-button {
@@ -350,22 +398,23 @@ p {
 }
 
 .button--outlined.button--primary {
-    background-color: white;
-    border-color: #0069F1;
-    color: #0069F1;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--fg-active-primary);
+    color: var(--fg-active-primary);
 }
 
 .button--outlined.button--primary:hover {
-    background-color: #0069F1;
-    color: white;
+    background-color: var(--fg-active-primary);
+    color: var(--fg-inverse-primary);
 }
 
+/* Alert Styles */
 .authserver-alert {
     padding: 15px;
     background-color: #FFF5F5;
     color: #DC3545;
     margin-bottom: 15px;
-    border-radius: 8px;
+    border-radius: var(--spacing-8);
     border-left: 4px solid #DC3545;
     display: flex;
     align-items: flex-start;
@@ -398,6 +447,7 @@ p {
     transition: 0.3s;
 }
 
+/* Error Page Styles */
 .error-page-wrap {
     height: 100vh;
     display: flex;
@@ -409,7 +459,7 @@ p {
 }
 
 .error-page {
-    color: white;
+    color: var(--fg-inverse-primary);
     text-align: center;
     margin: 0 1.5rem;
 }
@@ -423,10 +473,83 @@ p {
     padding-top: 1.5rem;
 }
 
-.button {
-    width: 100%;
-}
-
+/* Spacer */
 .spacer {
     display: none;
 }
+
+/* Additional styles for MAINGAU branding */
+.maingau-logo {
+    height: 24px;
+    width: auto;
+    margin-bottom: 2.4rem;
+}
+
+/* Sign up link section */
+.signup-section {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2.4rem;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    color: var(--fg-primary);
+}
+
+.signup-section a {
+    font-weight: 400;
+}
+
+/* Password reset link */
+.password-reset-link {
+    text-align: center;
+    margin-top: 1.6rem;
+    margin-bottom: 1.6rem;
+}
+
+.form-wrap > .button-group:last-child,
+.form-wrap > .password-reset-link + * {
+    margin-bottom: 0;
+}
+
+/* FIX: Text button/link colors + dashed underline */
+/* "Ich habe mein Passwort vergessen" */
+.password-reset-link a,
+.password-reset-link .btn-link {
+  color: rgba(0, 105, 241, 1) !important;
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  text-underline-offset: 2px;
+}
+
+/* "Kein Kunde von MAINGAU Energie? Registriere dich hier!" */
+/* Base text ("Kein Kunde von ...") */
+.signup-section {
+  color: rgba(0, 38, 87, 1) !important;
+}
+
+/* Link ("Registriere dich hier!") */
+.signup-section a,
+.signup-section .btn-link {
+  color: rgba(0, 105, 241, 1) !important;
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  text-underline-offset: 2px;
+}
+
+/* Keep dashed underline and blue color on hover/focus */
+.password-reset-link a:hover,
+.password-reset-link a:focus,
+.password-reset-link .btn-link:hover,
+.password-reset-link .btn-link:focus,
+.signup-section a:hover,
+.signup-section a:focus,
+.signup-section .btn-link:hover,
+.signup-section .btn-link:focus {
+  color: rgba(0, 105, 241, 1) !important;
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+}
+
+/* Django i18n support - no manual language switching needed */

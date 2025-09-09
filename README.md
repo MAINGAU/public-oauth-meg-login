@@ -58,13 +58,60 @@ To view the login page locally, open `index.html` in a web browser. The HTML fil
 
 Note that some functionality may not work due to missing server-side components and authentication systems.
 
-## File Structure Notes
+## Features
+
+### Django i18n Integration
+The login page is now fully integrated with Django's internationalization system:
+- **Automatic language detection** based on Django's i18n framework
+- **Translation tags** ({% trans %}) for all user-facing text
+- **Compatible with Django's locale system** for German (DE) and English (EN)
+- **No manual language switching** - handled by Django middleware
+
+### Updated Design
+- **New MAINGAU theme** based on Figma design specifications
+- **Modern design system** with CSS custom properties
+- **Improved typography** with RT Rondelle font family
+- **Enhanced form styling** with better accessibility
+- **Responsive design** that works on all devices
+
+### File Structure Notes
 
 The `index.html` file has been modified to include:
 - **Original paths** (commented out): `/static/...` - these are the original absolute paths from the live website
 - **Local testing paths** (active): `static/...` - these relative paths work when viewing the file locally
+- **Django i18n template tags** ({% trans %}) for all translatable content
+- **Authentic MAINGAU favicon** downloaded from [maingau-energie.de](https://www.maingau-energie.de/)
 
-This dual approach allows you to:
+This approach allows you to:
 1. See exactly how the original website was structured
 2. View the page locally with working CSS and assets
-3. Easily switch between versions by commenting/uncommenting the appropriate lines
+3. Use Django's built-in internationalization system
+4. Experience the updated MAINGAU design system with authentic branding
+
+### Translation Files & Best Practices
+The `locale_example.py` file demonstrates Django translation best practices:
+
+#### ✅ **Recommended Approach: Direct Text**
+```django
+{% trans "Email address" %}
+{% trans "Password" %}
+{% trans "Forgot your password?" %}
+```
+
+#### ❌ **Avoid: Abstract Keys**
+```django
+{% trans "login.email_label" %}      # Don't do this
+{% trans "form.password_field" %}    # Don't do this
+```
+
+#### **Why Direct Text is Better:**
+- **Self-documenting**: Developers immediately understand the content
+- **Translator-friendly**: Context is clear without looking up keys
+- **Fallback safety**: Missing translations show meaningful English text
+- **Django convention**: Follows Django's own patterns
+
+#### **Complete Workflow:**
+1. `python manage.py makemessages -l de` - Extract translatable strings
+2. Edit `locale/de/LC_MESSAGES/django.po` - Add German translations
+3. `python manage.py compilemessages` - Compile to binary format
+4. Django automatically detects user language via browser/settings
