@@ -1,0 +1,350 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    color: black;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.15px;
+    margin: 0;
+    font-family: sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+div.heading object {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-wrap {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-design {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 617px;
+    padding: 32px;
+    border-radius: 10px;
+    background-color: white;
+    border: 2px solid;
+}
+
+.form-wrap {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    margin-top: 0;
+    margin-bottom: 0.4rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+h2,
+.h2 {
+    letter-spacing: 0;
+}
+
+h3 {
+    font-size: 2.4rem;
+    letter-spacing: 0.25px;
+}
+
+.auth-header {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1.6rem;
+}
+
+.form-group > label {
+    display: inline-block;
+    margin-bottom: 0.4rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 0.1px;
+    color: black;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: calc(0.4rem + 1px) 0.8rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: black;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 0.4rem;
+    transition: none;
+}
+
+.button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: calc(0.8rem - 1px) 1.6rem;
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.25;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 0.4rem;
+    transition: none;
+}
+
+.button--primary {
+    border-color: gray;
+    background-color: gray;
+    color: black;
+}
+
+.button:focus .button:hover {
+    text-decoration: none;
+    outline: none;
+}
+
+.button-one-line {
+    flex: 1;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.button-one-line-group {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+}
+
+.pt-md {
+    padding-top: 1.6rem;
+}
+
+.pt-sm {
+    padding-top: 0.8rem;
+}
+
+.pl-xs {
+    padding-left: 0.4rem;
+}
+
+.mt-sm {
+    margin-top: 0.8rem;
+}
+
+.m-0 {
+    margin: 0;
+}
+
+.btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: calc(0.8rem - 1px) 1.6rem;
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.25;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 0.4rem;
+    transition: none;
+}
+
+.reveal-button {
+    display: none;
+}
+
+.link-wrapper {
+    text-align: center;
+}
+
+a,
+.link,
+.btn-link {
+    display: inline;
+    padding: 0;
+    margin: 0;
+    font-weight: 500;
+    line-height: 1.5;
+    color: blue;
+    text-decoration: underline;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    vertical-align: baseline;
+}
+
+a:hover,
+.link:hover,
+.btn-link:hover {
+    text-decoration: none;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+}
+
+.button-group {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin: 0 -0.4rem;
+    gap: 10px;
+}
+
+.button-group > * {
+    display: inline-flex;
+    flex-shrink: 1;
+    width: 100%;
+    margin-right: 0.4rem;
+    margin-left: 0.4rem;
+}
+
+@media (min-width: 576px) .button-group > input {
+    width: auto;
+}
+
+.mr-sm {
+    margin-right: 0.8rem;
+}
+
+.button-group .button + .button {
+    margin-left: 0.8rem;
+}
+
+.authorize-form-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 376px;
+    width: 100%;
+}
+
+.authorize-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.authorize-form-list {
+    list-style-position: inside;
+    padding-left: 0.8rem;
+    margin-top: 0;
+    max-height: 30vh;
+    overflow-y: auto;
+}
+
+.authorize-form-button-group {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.authorize-form-button {
+    flex-basis: 50%;
+}
+
+.button--outlined.button--primary {
+    background-color: white;
+    border-color: gray;
+    color: black;
+}
+
+.authserver-alert {
+    padding: 10px;
+    background-color: #f8ccd0;
+    color: #73000a;
+    margin-bottom: 15px;
+    border-radius: 4px; /* add a border radius to round the edges */
+}
+
+.authserver-closebtn {
+    margin-left: 15px;
+    color: #73000a;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.error-page-wrap {
+    height: 100vh;
+    display: flex;
+    max-width: 80ex;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.error-page {
+    color: white;
+    text-align: center;
+    margin: 0 1.5rem;
+}
+
+.error-page-header {
+    font-size: 3.4rem;
+    padding-bottom: 1.5rem;
+}
+
+.error-page-link {
+    padding-top: 1.5rem;
+}
+
+.button {
+    width: 100%;
+}
+
+.spacer {
+    display: none;
+}
