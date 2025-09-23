@@ -24,8 +24,8 @@ Open `index.html` in a web browser to view the login page locally.
 
 The password reset link in `index.html` needs to be updated based on the deployment environment:
 
-- **Production**: `https://app.maingau-energie.de/passwort-vergessen`
-- **Staging/Test**: `https://app-staging.maingau-energie.de/passwort-vergessen`
+- **Production**: `https://app.maingau-energie.de/forgot-password`
+- **Staging/Test**: `https://app-staging.maingau-energie.de/forgot-password`
 
 Update line 93 in `index.html` with the appropriate URL before deployment.
 
